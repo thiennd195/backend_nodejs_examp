@@ -1,10 +1,11 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
+const {MONGODB_URL} = require('../utils/config')
 
 const connectDB = async()=>{
 
     try {
-        await mongoose.connect('mongodb+srv://user-123:user-123@cluster0.tuxc2.mongodb.net/shop?retryWrites=true&w=majority',{
+        await mongoose.connect(MONGODB_URL,{
             useNewUrlParser:true,
             useUnifiedTopology:true
         })
